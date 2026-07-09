@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vulnscanner"
+version = "1.0.0"
+description = "Automated vulnerability scanner with banner grabbing, CVE matching, SSL checks, HTTP header analysis, directory enumeration, service fingerprinting, and risk scoring."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "VulnScanner Team", email = "vulnscanner@example.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: System :: Networking",
+]
+dependencies = [
+    "aiohttp>=3.9.0",
+    "cryptography>=41.0.0",
+]
+keywords = ["security", "vulnerability-scanner", "penetration-testing", "ssl", "cve"]
+
+[project.urls]
+Homepage = "https://github.com/example/vulnscanner"
+Repository = "https://github.com/example/vulnscanner"
+BugTracker = "https://github.com/example/vulnscanner/issues"
+
+[project.scripts]
+vulnscanner = "vulnscanner.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["vulnscanner*"]
+
+[tool.setuptools.package-data]
+"vulnscanner" = ["data/*.json"]
